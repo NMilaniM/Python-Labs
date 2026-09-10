@@ -1,0 +1,35 @@
+#
+# Natalia Telles Menezes
+# 08/29/2026
+# Gift card program for loyal customers and customers that buy a lot.
+#
+
+# Ask the user to enter the total purchase amount and if the customer is in the loyalty program
+Purchase = float(input('Enter the total purchase amount: '))
+LoyalCustomer = input('Is the customer a loyalty program member (Y/N)? ')
+
+# Calculate the amount of sales tax on the total
+Sales_tax = Purchase * 0.07
+print(f'Sales tax: ${Sales_tax:,.2f}')
+
+# Calculate the total with tax
+Total = Purchase + Sales_tax
+print(f'Total after tax: ${Total:,.2f}')
+
+# Announce to the user if the customer receives a gift card, and what amount of gift card they receive
+
+# Gift card for Loyal Customers
+if LoyalCustomer == 'Y':
+    if Purchase >= 50 and Purchase <= 100:
+        print('Gift card awarded: $20')
+    elif Purchase > 100:
+        print('Gift card awarded: $30')
+    else:
+        print('Gift card awarded: $0')
+
+# Gift card for Non-Loyal Customers
+if LoyalCustomer == 'N':
+    if Purchase > 100:
+        print('Gift card awarded: $10')
+    else:
+        print('Gift card awarded: $0')
