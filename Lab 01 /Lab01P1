@@ -1,0 +1,11 @@
+#
+# Natalia Telles Menezes
+# 08/23/2026
+# This program requests the name of the user and displays a beginning-of-semester personalized message
+#
+
+import datetime
+name = input('What is your name? ')
+print(f'Welcome to CSC121 {name}!')
+print(f'Today is {datetime.date.today():%B %d, %Y}')
+print('I hope you learn a lot of Python this semester!')
