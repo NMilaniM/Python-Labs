@@ -1,0 +1,29 @@
+#
+# Natalia Telles Menezes
+# 08/23/2026
+# This program helps calculate what a customer should pay for books, DVDs, and games
+#
+
+# Price per book, dvd, and game
+book_price = 3.25
+dvd_price = 4.50
+game_price = 6.25
+
+# Get the number of books, DVDs, and games being purchased (input)
+books = float(input('Books purchased: '))
+DVDs = float(input('DVDs purchased: '))
+Games = float(input('Games purchased: '))
+
+# Calculate the total before tax (processing)
+price_before_tax = (books * book_price) + (DVDs * dvd_price) + (Games * game_price)
+
+# Calculate the amount of sales tax on the total (processing)
+sales_tax = price_before_tax * 0.07
+
+# Calculate the total after tax(processing)
+price_after_tax = price_before_tax + sales_tax
+
+# Display the total before tax, the sales tax, and the total after tax (output)
+print(f'Cost before tax: ${price_before_tax:,.2f}')
+print(f'Sales tax: ${sales_tax:,.2f}')
+print(f'Cost after tax: ${price_after_tax:,.2f}')
