@@ -9,10 +9,21 @@ book_price = 3.25
 dvd_price = 4.50
 game_price = 6.25
 
-# Get the number of books, DVDs, and games being purchased (input)
+# Get the number of books, DVDs, and games being purchased and validate the input
 books = float(input('Books purchased: '))
+while books < 0 or books > 35:
+    print ("Number of books must be between 0 and 35.")
+    books = float(input('Books purchased: '))
+
 DVDs = float(input('DVDs purchased: '))
-Games = float(input('Games purchased: '))
+while DVDs < 0 or DVDs > 20:
+    print ("Number of DVDs must be between 0 and 20.")
+    DVDs = float(input('DVDs purchased: '))
+
+games = float(input('Games purchased: '))
+while games < 0 or games > 15:
+    print ("Number of games must be between 0 and 15.")
+    games = float(input('Games purchased: '))
 
 # Calculate the total before tax (processing)
 price_before_tax = (books * book_price) + (DVDs * dvd_price) + (Games * game_price)
