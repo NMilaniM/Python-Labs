@@ -1,0 +1,54 @@
+##
+# Natalia Telles Menezes
+# 09/11/2026
+# Special die throwing program with symbols and effects
+#
+
+#Import random module for roll_die function
+import random
+
+
+#main routine
+def main():
+
+    #Ask the user how many times they want the dice to roll
+    die = int(input("How many times do you want to roll the die?"))
+
+    #input validation
+    while die < 5 or die > 10:
+        print("Enter a number between 5 and 10.")
+        die = int(input("How many times do you want to roll the die?"))
+
+    #Call rol_die function to get the results
+    roll_die(die)
+
+
+#roll_die function
+def roll_die(rolls):
+
+    #The program loops according to the number of times entered by the user
+    # and assigns a random number between 1 and 20
+    for roll_num in range(rolls):
+        roll_value = random.randint(1, 20)
+
+        # Variable created to demonstrate the number of rolls
+        current_roll = roll_num + 1
+
+        # Conditions for each symbol and effect
+        if roll_value == 20:
+            print(f' Roll {current_roll}: {roll_value} ==> CRITICAL HIT!')
+        elif roll_value % 4 == 0:
+            print(f' Roll {current_roll}: {roll_value} ==> Sword')
+        elif roll_value % 4 == 1:
+            print(f' Roll {current_roll}: {roll_value} ==> Shield')
+        elif roll_value % 4 == 2:
+            print(f' Roll {current_roll}: {roll_value} ==> Spell')
+        elif roll_value % 4 == 3:
+            print(f' Roll {current_roll}: {roll_value} ==> Potion')
+
+    # End of the game message
+    print (f'Thanks for playing!')
+
+
+# Call the main function
+main()
